@@ -18,10 +18,11 @@ time. Sixteen languages, including Arabic.
 
 ## Why the policy is this short
 
-Hadeed ships **without the Android internet permission** — it is removed from the
-manifest explicitly. There is no account, no backend, no analytics SDK and no ad SDK.
-Nothing the app stores is capable of leaving the device, so most of a normal privacy
-policy has nothing to describe.
+Everything Hadeed stores stays on the device. There is no account, no backend, no
+sync and no ad SDK. Since November 2026 the app sends anonymous usage events and
+crash reports to PostHog (EU) so bugs can be found and fixed; the policy lists
+exactly what those carry. Workouts, weights, notes, food, photos and the profile
+never leave the phone.
 
 If that ever changes, this page is updated *before* the version that changes it ships.
 

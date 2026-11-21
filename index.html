@@ -6,7 +6,7 @@
     <title>Hadeed · Privacy Policy · سياسة الخصوصية</title>
     <meta
       name="description"
-      content="Privacy policy for Hadeed, the offline gym log: it has no internet permission, no account and no analytics. Everything you log stays on your phone."
+      content="Privacy policy for Hadeed, the offline gym log: no account, no ads. Your workouts stay on your phone; only anonymous usage counts and crash reports are sent, to fix bugs."
     />
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#faf8f6" media="(prefers-color-scheme: light)" />
@@ -16,7 +16,7 @@
     <meta property="og:title" content="Hadeed · Privacy Policy · سياسة الخصوصية" />
     <meta
       property="og:description"
-      content="Hadeed ships without the internet permission. Nothing you log can leave your phone."
+      content="Everything you log stays on your phone. Hadeed sends only anonymous usage counts and crash reports."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://vette1123.github.io/hadeed-privacy/" />
@@ -34,7 +34,7 @@
         "alternateName": "سياسة الخصوصية لتطبيق حديد",
         "url": "https://vette1123.github.io/hadeed-privacy/",
         "inLanguage": ["en", "ar"],
-        "dateModified": "2026-09-21",
+        "dateModified": "2026-11-21",
         "about": {
           "@type": "MobileApplication",
           "name": "Hadeed",
@@ -169,23 +169,23 @@
         <span class="badge">Hadeed · حديد</span>
         <h1>Privacy Policy</h1>
         <p class="sub">Hadeed — offline gym log for Android (<code>com.mohamedgado.hadeed</code>)</p>
-        <p class="updated">Last updated: 21 September 2026</p>
+        <p class="updated">Last updated: 21 November 2026</p>
         <a class="langjump" href="#ar">اقرأ بالعربية ↓</a>
       </header>
 
       <div class="lede">
         <p>
-          Hadeed is installed <strong>without the Android internet permission</strong>.
-          Not "we promise not to send your data" — the app is not technically capable of
-          sending it. There is no account, no server, no analytics and no advertising.
-          Everything you log stays on your phone.
+          <strong>Everything you log stays on your phone.</strong> There is no account,
+          no sync and no advertising. Since November 2026 the app sends one thing: anonymous
+          usage counts and crash reports, so the developer can see which features are used
+          and fix what breaks. Never your workouts, weights, notes, food, photos or name.
         </p>
       </div>
 
-      <h2>What Hadeed collects</h2>
+      <h2>What stays on your phone</h2>
       <p>
-        Nothing is collected, because nothing is transmitted. The app stores the
-        following <em>on your device only</em>, so it can show you your own history:
+        The app stores the following <em>on your device only</em>, so it can show you your
+        own history. None of it is ever sent:
       </p>
       <ul>
         <li>Your workouts — exercises, sets, reps, weights, dates and rest times.</li>
@@ -202,6 +202,37 @@
         and there is no way for the developer to see it.
       </p>
 
+      <h2>What Hadeed sends: anonymous usage and crash reports</h2>
+      <p>
+        The app uses <a href="https://posthog.com/privacy">PostHog</a>, hosted in the
+        European Union (Frankfurt), to receive:
+      </p>
+      <ul>
+        <li>
+          <strong>Usage events</strong> — which screen was opened, that a workout was started,
+          finished or discarded, that a routine was created or food was logged, which setting
+          was changed to which option. Events carry counts and choices (for example "5
+          exercises, 18 sets, 52 minutes"), never what you lifted or wrote.
+        </li>
+        <li>
+          <strong>Crash and error reports</strong> — the error type and the place in the code
+          where it happened, so it can be fixed.
+        </li>
+        <li>
+          <strong>Device and app details</strong> — app version, Android version, phone model,
+          language, and an approximate country derived from the connection (the IP address
+          itself is not stored).
+        </li>
+        <li>
+          <strong>A random install ID</strong> created by the app. It is not linked to your
+          name, email, Google account or any other identity, and it changes if you reinstall.
+        </li>
+      </ul>
+      <p>
+        This data is sent encrypted (HTTPS), used only to understand how the app is used and
+        to fix bugs, and is not sold, shared with advertisers or used for advertising.
+        PostHog processes it on the developer's behalf. It is kept for up to 12 months.
+      </p>
       <h2>Permissions, and why each one exists</h2>
       <table>
         <thead>
@@ -243,10 +274,10 @@
             </td>
           </tr>
           <tr>
-            <td><em>Internet</em></td>
+            <td><code>INTERNET</code></td>
             <td>
-              <strong>Not requested.</strong> It is explicitly removed from the app's
-              manifest, which is why no data can leave the device.
+              Only to send the anonymous usage and crash reports described above. Your
+              workouts and everything else you log never leave the device.
             </td>
           </tr>
         </tbody>
@@ -263,20 +294,22 @@
 
       <h2>Children</h2>
       <p>
-        Hadeed is a general-audience fitness log. It does not knowingly collect anything
-        from anyone, of any age, because it does not collect anything at all.
+        Hadeed is a general-audience fitness log, not directed at children. It collects no
+        personal information from anyone, of any age; the anonymous reports above are the
+        same for every user.
       </p>
 
       <h2>Deleting your data</h2>
       <p>
         Uninstalling the app removes it. You can also clear it from
-        <em>Settings → Apps → Hadeed → Storage → Clear data</em>. There is no server copy
-        to request the deletion of, and no account to close.
+        <em>Settings → Apps → Hadeed → Storage → Clear data</em>. There is no account to
+        close. To have the anonymous usage and crash reports from your install deleted,
+        email the address below; reinstalling the app also starts a new, unlinked ID.
       </p>
 
       <h2>Changes to this policy</h2>
       <p>
-        If a future version of Hadeed ever gains a feature that touches the network, this
+        If a future version of Hadeed sends anything beyond what is described here, this
         page will be updated before that version ships, and the change will be described
         plainly rather than buried.
       </p>
@@ -290,19 +323,20 @@
       <!-- ================= ARABIC ================= -->
       <section dir="rtl" lang="ar" id="ar">
         <h2>سياسة الخصوصية</h2>
-        <p class="sub">حديد — سجل تمارين يعمل دون إنترنت (<code>com.mohamedgado.hadeed</code>)</p>
-        <p class="updated">آخر تحديث: ٢١ سبتمبر ٢٠٢٦</p>
+        <p class="sub">حديد — سجل تمارين يعمل دون اتصال (<code>com.mohamedgado.hadeed</code>)</p>
+        <p class="updated">آخر تحديث: ٢١ نوفمبر ٢٠٢٦</p>
 
         <div class="lede">
           <p>
-            حديد يُثبَّت <strong>بدون صلاحية الإنترنت</strong> أصلًا. ليست مجرد وعدٍ بعدم
-            إرسال بياناتك، بل إن التطبيق غير قادر تقنيًا على إرسالها. لا يوجد حساب، ولا
-            خادم، ولا تحليلات، ولا إعلانات. كل ما تسجله يبقى على هاتفك.
+            <strong>كل ما تسجله يبقى على هاتفك.</strong> لا يوجد حساب ولا مزامنة ولا إعلانات.
+            منذ نوفمبر ٢٠٢٦ يرسل التطبيق شيئًا واحدًا فقط: إحصاءات استخدام مجهولة الهوية وتقارير
+            الأعطال، ليعرف المطوّر أي الميزات تُستخدم ويصلح ما يتعطل. لا يُرسل أبدًا تمارينك أو
+            أوزانك أو ملاحظاتك أو طعامك أو صورك أو اسمك.
           </p>
         </div>
 
-        <h3>ما الذي يجمعه حديد</h3>
-        <p>لا شيء يُجمع، لأن لا شيء يُرسل. يحفظ التطبيق ما يلي <em>على جهازك فقط</em>:</p>
+        <h3>ما يبقى على هاتفك</h3>
+        <p>يحفظ التطبيق ما يلي <em>على جهازك فقط</em>، ولا يُرسل منه شيء أبدًا:</p>
         <ul>
           <li>تمارينك — الحركات والمجموعات والتكرارات والأوزان والتواريخ وأوقات الراحة.</li>
           <li>روتيناتك وخططك.</li>
@@ -311,6 +345,16 @@
           <li>الصور التي تختار إرفاقها بجلسة تمرين.</li>
         </ul>
         <p>لا يُرسل أي من ذلك إلى أي جهة، ولا يمكن للمطوّر الاطلاع عليه.</p>
+
+        <h3>ما يرسله حديد: إحصاءات استخدام وتقارير أعطال مجهولة الهوية</h3>
+        <p>يستخدم التطبيق خدمة <a href="https://posthog.com/privacy">PostHog</a> المستضافة في الاتحاد الأوروبي (فرانكفورت) لاستقبال:</p>
+        <ul>
+          <li><strong>أحداث الاستخدام</strong> — أي شاشة فُتحت، وبدء تمرين أو إنهاؤه أو إلغاؤه، وإنشاء روتين أو تسجيل طعام، وأي إعداد تغيّر وإلى أي خيار. تحمل الأحداث أعدادًا واختيارات فقط (مثل «5 تمارين، 18 مجموعة، 52 دقيقة»)، ولا تحمل أبدًا ما رفعته أو كتبته.</li>
+          <li><strong>تقارير الأعطال والأخطاء</strong> — نوع الخطأ وموضعه في الكود، لإصلاحه.</li>
+          <li><strong>بيانات الجهاز والتطبيق</strong> — إصدار التطبيق وإصدار أندرويد وطراز الهاتف واللغة، ودولة تقريبية مستنتجة من الاتصال (دون حفظ عنوان IP نفسه).</li>
+          <li><strong>معرّف تثبيت عشوائي</strong> ينشئه التطبيق، غير مرتبط باسمك أو بريدك أو حساب Google أو أي هوية أخرى، ويتغير إذا أعدت التثبيت.</li>
+        </ul>
+        <p>تُرسل هذه البيانات مشفّرة (HTTPS)، وتُستخدم فقط لفهم استخدام التطبيق وإصلاح الأعطال، ولا تُباع ولا تُشارك مع معلنين ولا تُستخدم للإعلان. تعالجها PostHog نيابةً عن المطوّر، وتُحفظ مدة أقصاها 12 شهرًا.</p>
 
         <h3>الصلاحيات وسبب كل واحدة</h3>
         <ul>
@@ -321,7 +365,7 @@
           <li><code>RECEIVE_BOOT_COMPLETED</code> — لاستعادة تذكيراتك بعد إعادة تشغيل الهاتف.</li>
           <li><code>WAKE_LOCK</code> — لإبقاء المؤقّت دقيقًا أثناء التمرين.</li>
           <li>الصور والملفات — فقط عند اختيارك إرفاق صورة أو استيراد نسخة احتياطية أو تصديرها.</li>
-          <li><strong>الإنترنت — غير مطلوبة إطلاقًا</strong>، وهي محذوفة صراحةً من ملف التطبيق.</li>
+          <li><code>INTERNET</code> — فقط لإرسال إحصاءات الاستخدام وتقارير الأعطال المجهولة الموضّحة أعلاه. تمارينك وكل ما تسجله لا يغادر الجهاز.</li>
         </ul>
 
         <h3>النسخ الاحتياطي والمشاركة</h3>
@@ -331,19 +375,20 @@
         </p>
 
         <h3>الأطفال</h3>
-        <p>حديد تطبيق لياقة لعموم المستخدمين، ولا يجمع شيئًا من أي شخص مهما كان عمره، لأنه لا يجمع شيئًا أساسًا.</p>
+        <p>حديد تطبيق لياقة لعموم المستخدمين وليس موجّهًا للأطفال. لا يجمع أي معلومات شخصية من أي شخص مهما كان عمره، والتقارير المجهولة أعلاه واحدة لكل المستخدمين.</p>
 
         <h3>حذف بياناتك</h3>
         <p>
           إلغاء تثبيت التطبيق يحذفها. ويمكنك أيضًا مسحها من
-          <em>الإعدادات ← التطبيقات ← حديد ← التخزين ← مسح البيانات</em>. لا توجد نسخة على
-          خادم لتطلب حذفها، ولا حساب لتغلقه.
+          <em>الإعدادات ← التطبيقات ← حديد ← التخزين ← مسح البيانات</em>. لا يوجد حساب لتغلقه.
+          ولحذف تقارير الاستخدام والأعطال المجهولة الخاصة بتثبيتك، راسلنا على البريد أدناه؛
+          وإعادة تثبيت التطبيق تبدأ أيضًا بمعرّف جديد غير مرتبط بالسابق.
         </p>
 
         <h3>تغييرات هذه السياسة</h3>
         <p>
-          إذا أضاف إصدار مستقبلي من حديد أي ميزة تتصل بالشبكة، ستُحدَّث هذه الصفحة قبل
-          إطلاق ذلك الإصدار، وسيُوضَّح التغيير بلغة صريحة.
+          إذا أرسل إصدار مستقبلي من حديد أي شيء يتجاوز ما هو موضّح هنا، ستُحدَّث هذه الصفحة
+          قبل إطلاق ذلك الإصدار، وسيُوضَّح التغيير بلغة صريحة.
         </p>
 
         <h3>للتواصل</h3>
