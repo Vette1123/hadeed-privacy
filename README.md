@@ -1,9 +1,13 @@
 # hadeed-privacy
 
 The published privacy policy for **Hadeed** (`com.mohamedgado.hadeed`), the offline
-gym log for Android.
+gym log for Android and iPhone.
 
 - **Privacy policy:** https://vette1123.github.io/hadeed-privacy/
+- **Get Hadeed:** https://hadeed.mohamedgado.com/?s=github&m=repo
+- **About the app:** https://www.mohamedgado.com/projects/hadeed
+- **Install page:** https://www.mohamedgado.com/projects/hadeed/go (Arabic: https://www.mohamedgado.com/projects/hadeed/go-ar)
+- **App on the App Store:** https://apps.apple.com/app/id6837665349
 - **App on Google Play:** https://play.google.com/store/apps/details?id=com.mohamedgado.hadeed
 
 The policy URL is referenced from the Google Play listing and from inside the app
@@ -11,7 +15,7 @@ The policy URL is referenced from the Google Play listing and from inside the ap
 
 ## What Hadeed is
 
-An Android gym log. You tap the muscles you want to train on a body map, log your sets,
+A gym log for Android and iPhone. You tap the muscles you want to train on a body map, log your sets,
 and watch your numbers move. 500+ exercises with animated illustrations, routines and
 plans, five home-screen widgets, a Wear OS companion, and a rest timer that fires on
 time. Sixteen languages, including Arabic.
