@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="{{LANG}}" dir="{{DIR}}" data-alt="{{ALT_URL}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    {{HEAD}}
+    <!--partial:head.html--><!--/partial:head.html-->
+    <!--partial:lang-pick.js--><!--/partial:lang-pick.js-->
+    <script type="application/ld+json">{{JSONLD}}</script>
+    <link rel="icon" href="{{IMG}}icon-96.webp" type="image/webp" />
+    <link rel="apple-touch-icon" href="https://www.mohamedgado.com/projects/hadeed/go-img/icon-180.png" />
+    <!--
+      The one link printed inside every share card's QR code. Served at /hadeed-privacy/go
+      (GitHub Pages drops the .html), which keeps the encoded URL short enough for a
+      37-module code, and proxied at mohamedgado.com/projects/hadeed/go. The path must never
+      change: cards already sent cannot be updated. A link that names a place inside the
+      app (?to=quran/26&ayah=169) is offered to the app first.
+
+      Fast by construction: the largest thing in the first screen is the headline (text,
+      painted on the first frame), every picture below it is lazy, AVIF with a WebP
+      fallback, and sized so nothing shifts. No web fonts, no scripts from anyone else (on mohamedgado.com, which proxies this page, the shared PostHog tracker (www.mohamedgado.com/t.js, cookieless, EU servers) counts the visit: see partials/head.html).
+      Both store badges are the official artwork: Apple and Google forbid redrawing them.
+    -->
+    <!--partial:theme.css--><!--/partial:theme.css-->
+    <style>
+      /* The install page's own parts; the shared look is partials/theme.css above. */
+      /* ---- hero: the headline is the first paint ---- */
+      .hero { position: relative; isolation: isolate; padding-block: 32px 56px; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); gap: 48px; align-items: center; }
+      .hero::before, .hero::after { content: ""; position: absolute; z-index: -1; pointer-events: none; inset-inline: calc(50% - 50vw); }
+      .hero::before {
+        top: -120px; bottom: -200px;
+        /* Full-bleed past the 1180px wrap; html clips overflow-x, so 100vw can't add a sideways scroll.
+           The last layer is the fog: a low, wide copper glow along the foot of the hero, behind the phone. */
+        background:
+          radial-gradient(min(900px, 80vw) 460px at 22% 26%, var(--glow-a), transparent 70%),
+          radial-gradient(min(800px, 70vw) 420px at 80% 12%, var(--glow-b), transparent 70%),
+          radial-gradient(ellipse 60% 13% at 50% 79%, var(--fog), transparent);
+        /* Fades in from its top edge, so a two-row phone header never shows where it starts. */
+        -webkit-mask-image: var(--rise); mask-image: var(--rise);
+      }
+      .kicker { display: block; font: 700 15px/1.4 var(--ui); color: var(--gold); letter-spacing: 0.01em; margin-bottom: 14px; }
+      html[lang="ar"] .kicker { font-family: var(--arabic); }
+      .big { display: block; font-family: var(--display); font-size: clamp(40px, 6.2vw, 86px); line-height: 1.02; letter-spacing: -0.025em; font-weight: 600; }
+      .big span { color: var(--faint); }
+      html[lang="ar"] .big { font-family: var(--arabic); line-height: 1.25; letter-spacing: 0; font-weight: 750; font-size: clamp(38px, 5.6vw, 76px); }
+      .hero .lede { max-width: 44ch; margin-top: 22px; }
+      .hero .badges { margin-top: 28px; }
+
+      /* ---- facts ---- */
+      .facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); }
+      .facts div { padding: 22px 18px; border-inline-start: 1px solid var(--line); min-width: 0; }
+      .facts div:first-child { border-inline-start: 0; padding-inline-start: 0; }
+      .facts b { display: block; font-size: 22px; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+      .facts span { font-size: 14px; color: var(--soft); }
+
+      /* ---- live capture: the rest timer ends, then a new record lands, in HTML so it costs no image ---- */
+      .demo { position: relative; justify-self: center; width: min(100%, 400px); }
+      /* The whole phone, uncropped: a mask or a clip on it made Chrome paint a pale box behind it. */
+      .demo picture { position: relative; display: flex; justify-content: center; }
+      /* A contact shadow under each phone, drawn as a gradient: a drop-shadow filter on the shots
+         made Chrome paint a pale box behind them. */
+      .demo picture::after, .feat picture::after { content: ""; position: absolute; z-index: -1; left: 50%; bottom: -18px; translate: -50% 0; width: 70%; height: 64px; border-radius: 50%; background: radial-gradient(closest-side, rgba(4, 14, 22, 0.38), transparent); pointer-events: none; }
+      .demo { isolation: isolate; }
+      .demo picture img { width: min(76%, 300px); height: auto; margin-top: 40px; }
+      .card { position: absolute; z-index: 3; inset-inline: 0; display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 14px 16px; border-radius: 22px; border: 1px solid var(--line); box-shadow: 0 24px 48px -22px rgba(15, 29, 39, 0.45); }
+      .card .ic { width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; }
+      .card b { display: block; font-size: 14px; line-height: 1.3; }
+      .card small { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; color: var(--soft); font-size: 13px; line-height: 1.4; }
+      /* Solid, not frosted: a backdrop-filter here veiled the whole phone shot in Chrome. */
+      .alert { top: 0; background: var(--panel); }
+      .alert time { align-self: start; color: var(--faint); font-size: 12px; }
+      .txn { top: 54%; inset-inline: 18px; background: var(--panel); border-color: color-mix(in srgb, var(--gold) 45%, var(--line)); }
+      .txn .ic { background: var(--gold); color: var(--bg); }
+      .txn .ic svg { width: 20px; height: 20px; }
+      .txn small { -webkit-line-clamp: 1; }
+      .txn .tag { display: block; margin-top: 2px; font: 700 11px var(--ui); color: var(--gold); letter-spacing: 0.04em; text-transform: uppercase; }
+      html[lang="ar"] .txn .tag { font-family: var(--arabic); letter-spacing: 0; }
+      .txn .amt { font: 800 19px var(--ui); color: var(--gold); white-space: nowrap; font-variant-numeric: tabular-nums; }
+      .txn .amt span { font-size: 11px; font-weight: 600; color: var(--faint); margin-inline-start: 4px; }
+
+      /* ---- scroll cue: a small mouse at the foot of the hero, desktop only (on a phone the
+         hero is taller than the screen, so the next section is already peeking) ---- */
+      .cue { display: none; }
+      @media (min-width: 861px) {
+        .cue { position: absolute; bottom: 16px; left: 50%; translate: -50% 0; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 6px 16px 6px 8px; border-radius: 999px; border: 1px solid var(--line); background: color-mix(in srgb, var(--panel) 70%, transparent); font: 600 13px var(--ui); color: var(--soft); text-decoration: none; white-space: nowrap; transition: opacity 300ms var(--ease), border-color 200ms var(--ease), color 200ms var(--ease); -webkit-tap-highlight-color: transparent; }
+        html[lang="ar"] .cue { font-family: var(--arabic); padding: 6px 8px 6px 16px; }
+        .cue:hover { color: var(--ink); border-color: var(--gold); }
+        .cue .mouse { flex: none; width: 18px; height: 28px; border: 1.6px solid var(--gold); border-radius: 10px; position: relative; }
+        .cue .mouse::before { content: ""; position: absolute; left: 50%; top: 5px; width: 3px; height: 6px; margin-left: -1.5px; border-radius: 2px; background: var(--gold); }
+        .scrolled .cue { opacity: 0; pointer-events: none; }
+      }
+      /* A short window has no room under the badges for it. */
+      @media (min-width: 861px) and (max-height: 559px) { .cue { display: none; } }
+      @media (prefers-reduced-motion: no-preference) {
+        html { scroll-behavior: smooth; }
+        .cue .mouse::before { animation: wheel 1.8s var(--ease) infinite; }
+        .cue { animation: nudge 2.4s ease-in-out infinite; }
+        .cue:hover { animation-play-state: paused; }
+        @keyframes nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        @keyframes wheel { 0% { opacity: 0; transform: translateY(-2px); } 30% { opacity: 1; } 70% { opacity: 0; transform: translateY(8px); } 100% { opacity: 0; } }
+      }
+
+      /* ---- how it works ---- */
+      .how { padding-block: 72px 24px; }
+      .how > h2, .feat h2, .more h2 { font-family: var(--display); font-size: clamp(30px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.015em; font-weight: 600; }
+      html[lang="ar"] .how > h2, html[lang="ar"] .feat h2, html[lang="ar"] .more h2 { font-weight: 750; font-family: var(--arabic); line-height: 1.35; letter-spacing: 0; }
+      /* A heading never touches the list or block under it. */
+      .how > h2 + :not(p), .more > h2 + :not(p) { margin-top: 28px; }
+      .how > p { margin-top: 14px; font-size: 18px; color: var(--soft); max-width: 60ch; }
+      .how ol { list-style: none; margin: 36px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); counter-reset: s; border-block: 1px solid var(--line); }
+      .how li { counter-increment: s; padding: 28px 24px; border-inline-start: 1px solid var(--line); min-width: 0; }
+      .how li:first-child { border-inline-start: 0; padding-inline-start: 0; }
+      .how li::before { content: "0" counter(s); display: block; margin-bottom: 10px; font: 800 13px var(--ui); color: var(--gold); letter-spacing: 0.08em; }
+      .how h3 { font-size: 19px; line-height: 1.3; }
+      .how li p { margin-top: 6px; font-size: 15px; color: var(--soft); }
+
+      /* ---- features: text beside its screen, alternating ---- */
+      .feat { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center; padding-block: 48px; border-bottom: 1px solid var(--line); }
+      .feat:nth-child(even) picture { order: -1; }
+      .feat .k { font: 700 14px var(--ui); color: var(--gold); }
+      html[lang="ar"] .feat .k { font-family: var(--arabic); font-size: 15px; }
+      .feat h2 { margin-top: 10px; }
+      .feat p { margin-top: 14px; font-size: 18px; color: var(--soft); max-width: 44ch; }
+      .feat picture { position: relative; isolation: isolate; justify-self: center; width: min(100%, 270px); }
+
+      /* ---- more inside: the rest of the app, named so search reads it ---- */
+      .more { padding-block: 64px 16px; }
+      .more p { margin-top: 12px; color: var(--soft); max-width: 60ch; }
+      .chips li { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); font-weight: 600; font-size: 15px; }
+
+      /* Below the first screen: skip layout and paint until it is near, so a low-end phone
+         paints the hero sooner. The size hint keeps the scrollbar from jumping. */
+      .feat, .more { content-visibility: auto; contain-intrinsic-size: auto 640px; }
+
+      /* ---- the hero demo's motion ---- */
+      @media (prefers-reduced-motion: no-preference) {
+        .alert { animation: drop 6.5s var(--ease) infinite; }
+        .txn { animation: land 6.5s var(--ease) infinite; }
+        @keyframes drop { 0% { opacity: 0; transform: translateY(-22px) scale(0.96); } 7%, 40% { opacity: 1; transform: none; } 52%, 100% { opacity: 0; transform: translateY(90px) scale(0.9); } }
+        @keyframes land { 0%, 44% { opacity: 0; transform: translateY(-46px) scale(0.94); } 56%, 93% { opacity: 1; transform: none; } 100% { opacity: 0; transform: none; } }
+      }
+      /* ---- desktop: the whole hero fits the first screen, whatever the window's height ----
+         Type and the phone scale with the shorter of width and height; the hero fills the
+         screen below the top bar, so the facts row starts at the fold. */
+      @media (min-width: 861px) {
+        .hero { --ph: min(300px, calc((100svh - 150px) * 480 / 985)); min-height: calc(100svh - 80px); padding-block: 8px 24px; }
+        .big { font-size: clamp(34px, min(6.2vw, 10svh), 86px); }
+        html[lang="ar"] .big { font-size: clamp(32px, min(5.6vw, 9svh), 76px); }
+        .kicker { margin-bottom: min(14px, 1.6svh); }
+        .lede { margin-top: min(22px, 2.6svh); font-size: clamp(15px, min(1.6vw, 2.6svh), 19px); }
+        .hero .badges { margin-top: min(28px, 3.2svh); }
+        .demo { width: min(100%, 400px, max(340px, calc(var(--ph) + 120px))); }
+        .demo picture img { width: var(--ph); margin-top: min(40px, 5svh); }
+      }
+
+      /* ---- tablet and phone: one column ---- */
+      @media (max-width: 860px) {
+        .hero, .feat { grid-template-columns: minmax(0, 1fr); }
+        .hero { gap: 36px; padding-block: 20px 40px; }
+        .feat { gap: 32px; padding-block: 48px; }
+        .feat:nth-child(even) picture { order: 0; }
+        .feat picture { width: min(72%, 280px); }
+        .how { padding-block: 48px 8px; }
+        .how ol { grid-template-columns: minmax(0, 1fr); }
+        .how li, .how li:first-child { padding: 22px 0; border-inline-start: 0; }
+        .how li + li { border-top: 1px solid var(--line); }
+        .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .facts div:nth-child(3) { border-inline-start: 0; padding-inline-start: 0; }
+        .facts div:nth-child(n + 3) { border-top: 1px solid var(--line); }
+        .hero .badges { width: 100%; }
+      }
+      @media (max-width: 380px) {
+        .card { padding: 12px; gap: 10px; grid-template-columns: 36px minmax(0, 1fr) auto; }
+        .card .ic { width: 36px; height: 36px; }
+        .txn { inset-inline: 8px; }
+        .facts div { padding: 18px 12px; }
+        .facts div:first-child, .facts div:nth-child(3) { padding-inline-start: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <!--partial:header.html--><!--/partial:header.html-->
+    <div class="wrap">
+
+      <main>
+      <section class="hero">
+        <div>
+          <h1 class="rise"><span class="kicker">{{KICKER}}</span><span class="big">{{H1A}} <span>{{H1B}}</span></span></h1>
+          <p class="lede rise d1">{{LEDE}}</p>
+          <nav class="badges rise d1" aria-label="{{NAV_LABEL}}">{{BADGES_HERO}}</nav>
+        </div>
+        <div class="demo">{{DEMO}}</div>
+        <a class="cue" href="#how"><span class="mouse" aria-hidden="true"></span>{{CUE}}</a>
+      </section>
+
+      <div class="facts">{{FACTS}}</div>
+
+      <section class="how" id="how">
+        <h2>{{HOW_H}}</h2>
+        <p>{{HOW_P}}</p>
+        <ol>{{HOW}}</ol>
+      </section>
+
+      <div class="feats">{{FEATS}}</div>
+
+      <section class="more">
+        <h2>{{MORE_H}}</h2>
+        <p>{{MORE_P}}</p>
+        <ul class="chips">{{MORE}}</ul>
+      </section>
+
+      <section class="band">
+        <div><h2>{{PRIV_H}}</h2><p>{{PRIV_P}}</p></div>
+        <ul>{{PRIV}}</ul>
+      </section>
+
+      <section class="faq">
+        <h2>{{FAQ_H}}</h2>
+        <div>{{FAQ}}</div>
+      </section>
+      </main>
+    </div>
+
+    <section class="cta">
+      <img class="ic" src="{{IMG}}icon-192.webp" width="88" height="88" alt="" loading="lazy" decoding="async" />
+      <h2>{{CTA_H}}</h2>
+      <nav class="badges" data-place="cta" aria-label="{{NAV_LABEL}}">{{BADGES}}</nav>
+    </section>
+
+    <!--partial:footer.{{LANG}}.html--><!--/partial:footer.{{LANG}}.html-->
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        // The scroll cue leaves once the reader has started scrolling.
+        var cue = function () { root.classList.toggle('scrolled', scrollY > 40); };
+        addEventListener('scroll', cue, { passive: true });
+
+        // The reader's own store goes first, in both badge rows. iPadOS reports itself
+        // as a Mac, so Macintosh counts as Apple. Nothing redirects: an in-app browser
+        // that blocks the bounce would show the reader nothing at all.
+        var apple = /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent || '');
+        if (!apple) document.querySelectorAll('.badges').forEach(function (n) { n.prepend(n.querySelector('.play')); });
+
+        // Attribution. `?s=<source>` and an optional `?m=<medium>` are the only way to tell
+        // one channel from another once an install lands. Play takes ONE `referrer` whose
+        // value is itself a percent-encoded query (top-level utm_ keys are dropped silently);
+        // Apple takes a campaign token, `ct`. A bare /go is a scanned card, so the hrefs
+        // already say card/qr. marketing/tracked-links.md in the app repo lists the sources.
+        var params = new URLSearchParams(location.search);
+        if (params.get('s') || params.get('m')) {
+          var source = (params.get('s') || 'card').slice(0, 40);
+          var medium = (params.get('m') || (params.get('s') ? 'share' : 'qr')).slice(0, 40);
+          document.querySelectorAll('.badges .play').forEach(function (a) {
+            a.href = a.href.replace(/&referrer=[^&]*/, '&referrer=' + encodeURIComponent('utm_source=' + source + '&utm_medium=' + medium));
+          });
+          document.querySelectorAll('.badges .apple').forEach(function (a) {
+            a.href = a.href.replace(/([?&])ct=[^&]*/, '$1ct=' + encodeURIComponent(source + '-' + medium));
+          });
+        }
+        params.delete('s');
+        params.delete('m');
+      })();
+    </script>
+    <!--partial:lang.js--><!--/partial:lang.js-->
+    <!--partial:header.js--><!--/partial:header.js-->
+    <!--partial:switch.js--><!--/partial:switch.js-->
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f4f0" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0908" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="twitter:creator" content="@Sadge1996" />
+    <script>
+      // A theme picked with the switch applies before the first paint, so the page never flashes.
+      try {
+        var t = localStorage.getItem('go-theme');
+        if (t === 'light' || t === 'dark') {
+          document.documentElement.setAttribute('data-theme', t);
+          document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) { m.content = t === 'dark' ? '#0a0908' : '#f7f4f0'; });
+        }
+      } catch (e) {}
+      // PostHog: on mohamedgado.com (www and the app subdomains) every page loads www's /t.js,
+      // the same tracker the portfolio runs (lib/tracker-entry.ts there): pageviews, time on page
+      // and scroll depth, link and button clicks, store and download clicks, errors. Cookieless,
+      // EU servers, through www.mohamedgado.com's own PostHog proxy. ?s=<source> on a link arrives as
+      // utm_source. The github.io copies load nothing.
+      if (/(^|\.)mohamedgado\.com$/.test(location.hostname)) {
+        var t = document.createElement('script');
+        t.src = 'https://www.mohamedgado.com/t.js';
+        t.async = true;
+        document.head.appendChild(t);
+      }
+    </script>

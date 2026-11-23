@@ -1,0 +1,326 @@
+{
+  "slug": "hadeed",
+  "appleId": "6837665349",
+  "apple": "https://apps.apple.com/app/id6837665349",
+  "play": "https://play.google.com/store/apps/details?id=com.mohamedgado.hadeed",
+  "category": "HealthApplication",
+  "image": "og.jpg?v=2",
+  "en": {
+    "title": "Hadeed: Gym Workout Tracker, Week Plan & Calorie Counter",
+    "description": "Hadeed is a free, offline gym workout tracker and planner: a week plan for any schedule, 5,800+ exercises you see move, sets, PRs and calories. No ads, no account.",
+    "ogAlt": "Hadeed: the week plan screen, days trained over six weeks and today's push session",
+    "ldName": "Hadeed",
+    "ldAlt": "حديد",
+    "kicker": "Hadeed: Gym Workout Tracker",
+    "h1a": "Your gym week,",
+    "h1b": "planned and logged.",
+    "lede": "Pick the days you can train and Hadeed lays out the week: what to train, how many sets and reps, how long to rest. Then it logs every set and counts your calories. Offline, free, no ads.",
+    "nav": "Download Hadeed",
+    "open": "Open in Hadeed",
+    "apple": "Download on the App Store",
+    "play": "Get it on Google Play",
+    "facts": [
+      [
+        "5,800+",
+        "exercises, most drawn in motion"
+      ],
+      [
+        "1 to 7 days",
+        "a week plan for any schedule"
+      ],
+      [
+        "Offline",
+        "works with no signal"
+      ],
+      [
+        "Free",
+        "no ads, no account, no paywall"
+      ]
+    ],
+    "demo": {
+      "app": "Hadeed",
+      "alert": "Rest done. Set 3 of 4 is next",
+      "when": "now",
+      "place": "New personal record",
+      "meta": "Bench press · estimated 1RM",
+      "tag": "Caught automatically",
+      "time": "82.5",
+      "ampm": "kg"
+    },
+    "features": [
+      [
+        "week",
+        "Week plan",
+        "A week plan that tells you what to do",
+        "Pick one to seven days, at the gym or at home. Each day comes with its moves, sets, reps and rest written in, a warm-up before and a cool-down after, and the week shows what is done, part done or still to come."
+      ],
+      [
+        "session",
+        "Workout log",
+        "Log every set as you lift",
+        "Sets, reps and weight in kilograms or pounds, RPE and RIR if you train by effort, warm-up sets counted apart, supersets, and a rest timer that starts itself and shows your next set."
+      ],
+      [
+        "exercise",
+        "Exercises",
+        "5,800+ exercises, and you see each one move",
+        "Over 5,000 come with a drawn figure that loops through the rep, plus form steps, common mistakes and the muscles worked. Barbell, dumbbell, machine, cable, kettlebell, band and bodyweight."
+      ],
+      [
+        "progress",
+        "Progress",
+        "Progress you can see",
+        "Personal records caught automatically, an estimated 1RM, charts for volume and bodyweight, body measurements, streaks and a muscle map that shows what you have been skipping."
+      ],
+      [
+        "food",
+        "Calories",
+        "A food diary and calorie counter",
+        "Calories left today with protein, carbs and fat, targets set from your goal to lose, keep or gain, and 122 common foods built in plus your own and quick add."
+      ]
+    ],
+    "how": [
+      [
+        "Pick your days",
+        "Choose the days you can train, one to seven, at the gym or at home. Your week starts on the day you choose."
+      ],
+      [
+        "Follow today's session",
+        "Open the day and the moves, sets, reps and rest are already there, with a video of the session in English or Arabic."
+      ],
+      [
+        "Watch it add up",
+        "Every set lands in your log. Records, your estimated max and six weeks of history fill in on their own."
+      ]
+    ],
+    "moreH": "More inside",
+    "moreP": "Hadeed also carries:",
+    "more": [
+      "Your own routines: push pull legs, upper lower, 5x5",
+      "A session built from a body map tap",
+      "Warm-up and cool-down, step by step",
+      "Notes on any exercise or session",
+      "Streaks, a weekly goal, medals and levels",
+      "Backup to one file and CSV export",
+      "Import from other workout apps",
+      "Home-screen widgets and a Wear OS app on Android",
+      "Dark and light themes",
+      "Sixteen languages, full right-to-left Arabic"
+    ],
+    "privH": "No ads. Your training stays on your phone.",
+    "privP": "Hadeed needs no account and no email. Your workouts, weights, notes and food stay on your device. Anonymous usage statistics and crash reports help fix bugs and never include them.",
+    "priv": [
+      "No ads",
+      "No account needed",
+      "Training history stays on the device",
+      "Works offline"
+    ],
+    "faqH": "Questions",
+    "faq": [
+      [
+        "Is Hadeed free?",
+        "Yes. Hadeed is free, with no ads, no subscription and nothing behind a paywall."
+      ],
+      [
+        "Does Hadeed work offline?",
+        "Yes. It opens instantly and never waits on a connection, so it works in a basement gym or on a plane."
+      ],
+      [
+        "I'm a beginner. Will it tell me what to do?",
+        "Yes. Beginners get a full body plan that grows into upper/lower and splits as the days go up, with sets, reps and rest written in for each day."
+      ],
+      [
+        "Can I bring my own program?",
+        "Yes. Push pull legs, upper lower, full body, a bro split or 5x5: build your own routines and put them on the same week."
+      ],
+      [
+        "Can I move my history from another app?",
+        "Yes. Hadeed imports the common export formats, and you can back up to one file or export a CSV whenever you want."
+      ],
+      [
+        "Which phones can run Hadeed?",
+        "Hadeed is on the App Store for iPhone and on Google Play for Android. Home-screen widgets and the Wear OS watch app are Android-only."
+      ]
+    ],
+    "ctaH": "Know what to train today.",
+    "foot": "Free · No ads · No account needed",
+    "links": [
+      [
+        "About Hadeed",
+        "https://www.mohamedgado.com/projects/hadeed"
+      ],
+      [
+        "Hadeed features",
+        "https://www.mohamedgado.com/projects/hadeed/features/en"
+      ],
+      [
+        "Privacy policy",
+        "https://www.mohamedgado.com/projects/hadeed/privacy"
+      ]
+    ],
+    "theme": [
+      "Switch to dark theme",
+      "Switch to light theme"
+    ],
+    "cue": "Scroll to explore"
+  },
+  "ar": {
+    "title": "حديد: تطبيق جدول تمارين الجيم وسجل التمرين وحساب السعرات",
+    "description": "حديد تطبيق مجاني لتسجيل تمارين الجيم وتخطيطها بدون إنترنت: خطة أسبوعية لأي جدول، وأكثر من 5800 تمرين تراها تتحرك، ومجموعات وأرقام قياسية وسعرات. بلا إعلانات.",
+    "ogAlt": "حديد: شاشة خطة الأسبوع، أيام التمرين في آخر ستة أسابيع وتمرين الدفع اليوم",
+    "ldName": "حديد",
+    "ldAlt": "Hadeed",
+    "kicker": "حديد: جدول وسجل تمارين الجيم",
+    "h1a": "أسبوعك في الجيم،",
+    "h1b": "مرتّب ومسجّل.",
+    "lede": "اختر الأيام التي تستطيع التدريب فيها وسيرتب حديد الأسبوع: ماذا تتدرب، وكم مجموعة وتكرارًا، وكم تستريح. ثم يسجل كل مجموعة ويحسب سعراتك. بدون إنترنت، مجاني، بلا إعلانات.",
+    "nav": "تحميل حديد",
+    "open": "افتح في حديد",
+    "apple": "حمّل من App Store",
+    "play": "احصل عليه من Google Play",
+    "facts": [
+      [
+        "+5800",
+        "تمرين، أغلبها مرسوم يتحرك"
+      ],
+      [
+        "من 1 إلى 7 أيام",
+        "خطة أسبوعية لأي جدول"
+      ],
+      [
+        "بدون إنترنت",
+        "يعمل دون إشارة"
+      ],
+      [
+        "مجاني",
+        "بلا إعلانات ولا حساب ولا اشتراك"
+      ]
+    ],
+    "demo": {
+      "app": "حديد",
+      "alert": "انتهت الراحة. المجموعة 3 من 4 هي التالية",
+      "when": "الآن",
+      "place": "رقم قياسي شخصي جديد",
+      "meta": "بنش برس · تقدير أقصى تكرار 1RM",
+      "tag": "التُقط تلقائيًا",
+      "time": "82.5",
+      "ampm": "كجم"
+    },
+    "features": [
+      [
+        "week-ar",
+        "خطة الأسبوع",
+        "خطة أسبوعية تخبرك ماذا تفعل",
+        "اختر من يوم إلى سبعة أيام، في الجيم أو في البيت. كل يوم يأتي بتمارينه ومجموعاته وتكراراته وراحته مكتوبة، مع إحماء قبله وتهدئة بعده، ويعرض الأسبوع ما اكتمل وما تم جزئيًا وما لم يحن بعد."
+      ],
+      [
+        "session-ar",
+        "سجل التمرين",
+        "سجّل كل مجموعة وأنت ترفع",
+        "المجموعات والتكرارات والوزن بالكيلوجرام أو الرطل، ومقياس الجهد RPE وRIR إن كنت تتدرب بالإحساس، ومجموعات الإحماء محسوبة منفصلة، ومجموعات متعاقبة، ومؤقت راحة يبدأ تلقائيًا ويعرض مجموعتك التالية."
+      ],
+      [
+        "exercise-ar",
+        "التمارين",
+        "أكثر من 5800 تمرين، وترى كل واحد يتحرك",
+        "أكثر من 5000 تمرين بشخصية مرسومة تكرر الحركة، مع خطوات الأداء والأخطاء الشائعة والعضلات العاملة. بار ودمبل وأجهزة وكابل وكيتلبل وأحزمة مطاطية ووزن الجسم."
+      ],
+      [
+        "progress-ar",
+        "التقدم",
+        "تقدم تراه بوضوح",
+        "أرقام قياسية شخصية تُلتقط تلقائيًا، وتقدير أقصى تكرار 1RM، ورسوم بيانية للحجم ووزن الجسم، وقياسات الجسم، وسلاسل أيام، وخريطة عضلات تكشف ما كنت تهمله."
+      ],
+      [
+        "food-ar",
+        "السعرات",
+        "يوميات الطعام وعدّاد السعرات",
+        "السعرات المتبقية اليوم مع البروتين والكربوهيدرات والدهون، وأهداف تُحسب من هدفك: خسارة أو ثبات أو زيادة، و122 طعامًا شائعًا مدمجًا مع أطعمتك والإضافة السريعة."
+      ]
+    ],
+    "how": [
+      [
+        "اختر أيامك",
+        "اختر الأيام التي تستطيع التدريب فيها، من يوم إلى سبعة، في الجيم أو في البيت. ويبدأ أسبوعك من اليوم الذي تختاره."
+      ],
+      [
+        "اتبع تمرين اليوم",
+        "افتح اليوم تجد التمارين والمجموعات والتكرارات والراحة جاهزة، مع فيديو للجلسة بالعربية أو بالإنجليزية."
+      ],
+      [
+        "شاهد الأرقام تتجمع",
+        "كل مجموعة تدخل سجلك. والأرقام القياسية وتقدير أقصى وزن وسجل ستة أسابيع تمتلئ وحدها."
+      ]
+    ],
+    "moreH": "المزيد داخل التطبيق",
+    "moreP": "وفي حديد أيضًا:",
+    "more": [
+      "روتيناتك الخاصة: دفع وسحب وأرجل، علوي وسفلي، 5x5",
+      "جلسة تُبنى بلمسة على خريطة الجسم",
+      "إحماء وتهدئة خطوة بخطوة",
+      "ملاحظات على أي تمرين أو جلسة",
+      "سلاسل أيام وهدف أسبوعي وميداليات ومستويات",
+      "نسخة احتياطية في ملف واحد وتصدير CSV",
+      "استيراد من تطبيقات تمارين أخرى",
+      "ويدجت للشاشة الرئيسية وتطبيق Wear OS على أندرويد",
+      "واجهة داكنة وفاتحة",
+      "ست عشرة لغة، مع عربية كاملة من اليمين إلى اليسار"
+    ],
+    "privH": "بلا إعلانات. تمارينك تبقى على هاتفك.",
+    "privP": "حديد لا يحتاج حسابًا ولا بريدًا إلكترونيًا. تمارينك وأوزانك وملاحظاتك وطعامك تبقى على جهازك. إحصاءات الاستخدام المجهولة وتقارير الأعطال تساعد على إصلاح الأخطاء ولا تتضمنها أبدًا.",
+    "priv": [
+      "بلا إعلانات",
+      "بدون حساب",
+      "سجل التمرين يبقى على الجهاز",
+      "يعمل بدون إنترنت"
+    ],
+    "faqH": "أسئلة",
+    "faq": [
+      [
+        "هل حديد مجاني؟",
+        "نعم. حديد مجاني، بلا إعلانات ولا اشتراك ولا ميزة خلف دفع."
+      ],
+      [
+        "هل يعمل حديد بدون إنترنت؟",
+        "نعم. يفتح فورًا ولا ينتظر اتصالًا، فيعمل في صالة بقبو أو في الطائرة."
+      ],
+      [
+        "أنا مبتدئ. هل سيخبرني ماذا أفعل؟",
+        "نعم. المبتدئ يحصل على خطة للجسم كامل تتحول إلى علوي وسفلي وتقسيمات كلما زادت الأيام، مع المجموعات والتكرارات والراحة مكتوبة لكل يوم."
+      ],
+      [
+        "هل أستطيع استخدام برنامجي الخاص؟",
+        "نعم. دفع وسحب وأرجل، علوي وسفلي، جسم كامل، تقسيمة البودي بلدر أو 5x5: ابنِ روتيناتك وضعها في الأسبوع نفسه."
+      ],
+      [
+        "هل أستطيع نقل سجلي من تطبيق آخر؟",
+        "نعم. حديد يستورد صيغ التصدير الشائعة، ويمكنك النسخ الاحتياطي في ملف واحد أو التصدير بصيغة CSV متى شئت."
+      ],
+      [
+        "على أي هواتف يعمل حديد؟",
+        "حديد على App Store للآيفون وعلى Google Play لأندرويد. ويدجت الشاشة الرئيسية وتطبيق ساعة Wear OS على أندرويد فقط."
+      ]
+    ],
+    "ctaH": "اعرف ماذا تتدرب اليوم.",
+    "foot": "مجاني · بلا إعلانات · بدون حساب",
+    "links": [
+      [
+        "عن حديد",
+        "https://www.mohamedgado.com/projects/hadeed"
+      ],
+      [
+        "مزايا حديد",
+        "https://www.mohamedgado.com/projects/hadeed/features"
+      ],
+      [
+        "سياسة الخصوصية",
+        "https://www.mohamedgado.com/projects/hadeed/privacy"
+      ]
+    ],
+    "theme": [
+      "التبديل إلى الوضع الداكن",
+      "التبديل إلى الوضع الفاتح"
+    ],
+    "cue": "مرّر للاستكشاف"
+  }
+}
