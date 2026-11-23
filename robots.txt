@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+# The App Review screen recording: a file for Apple, nothing to index.
+Disallow: /review/
 
 Sitemap: https://vette1123.github.io/hadeed-privacy/sitemap.xml
