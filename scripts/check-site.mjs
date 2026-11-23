@@ -70,7 +70,10 @@ for (const p of indexable) {
     const back = [...other.html.matchAll(/<link rel="alternate" hreflang="[\w-]+" href="([^"]+)"/g)].map((x) => x[1]);
     if (!back.includes(p.canonical)) bad(f, `hreflang ${href} does not name this page back`);
   }
-  if (/@yahoo\.com|@mohamedgado\.com\b/.test(p.html)) bad(f, 'old contact email');
+  // Contact: Gmail on the privacy policy (the address the store listings carry), and
+  // hello@mohamedgado.com (Cloudflare Email Routing to the same inbox) on public pages.
+  // Yahoo and any other mohamedgado.com alias are old.
+  if (/@yahoo\.com|(?<!\bhello)@mohamedgado\.com\b/.test(p.html)) bad(f, 'old contact email');
   // Images are same-origin on www: a src on github.io costs a second connection before the LCP image.
   if (/src="https:\/\/vette1123\.github\.io\/[^"]*go-img/.test(p.html)) bad(f, 'go-img image loads from github.io, use www.mohamedgado.com/projects/hadeed/go-img/');
 }

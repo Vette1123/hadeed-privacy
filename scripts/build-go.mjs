@@ -6,6 +6,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { applyPartials, css, SITE } from './partials.mjs'
 import { APP_SAME_AS, PERSON_SAME_AS } from './social.mjs'
+import { playTag, testingNote } from './testing.mjs'
 // The repo from this file, never the shell's folder: `.` read go.copy.json from wherever it ran
 // (ENOENT from any other cwd, 17 Nov).
 const repo = path.join(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -106,7 +107,7 @@ function page(l) {
     `<img src="${img}${f}-480.webp" srcset="${img}${f}-480.webp 480w, ${img}${f}-720.webp 720w" sizes="${sizes}" width="480" height="1002" alt="${esc(alt)}"${lazy ? ' loading="lazy"' : ''} decoding="async" /></picture>`
   const badges =
     `<a class="apple" href="${c.apple}?ct=card-qr"><img src="${img}app-store-en.svg" width="156" height="52" alt="${esc(t.apple)}" /></a>` +
-    `<a class="play" href="${c.play}&amp;referrer=utm_source%3Dcard%26utm_medium%3Dqr"><img src="${img}google-play-${l}.png" width="197" height="76" alt="${esc(t.play)}" /></a>`
+    `<a class="play" href="${c.play}&amp;referrer=utm_source%3Dcard%26utm_medium%3Dqr"><img src="${img}google-play-${l}.png" width="197" height="76" alt="${esc(t.play)}" />${playTag(l)}</a>`
   // The first feature (the week plan) is the hero's story, so it heads "how it works"; the rest
   // get a row each, text beside its screen.
   const [lead, ...rest] = t.features
@@ -135,6 +136,7 @@ function page(l) {
     LEDE: esc(t.lede),
     NAV_LABEL: esc(t.nav),
     BADGES: badges,
+    TESTING: testingNote(l),
     BADGES_HERO: badges.replaceAll('<a ', '<a data-place="hero" '),
     FACTS: t.facts.map(([b, s]) => `<div><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join(''),
     DEMO: demo,

@@ -3,6 +3,7 @@
 // the JSON-LD graph. Pure functions of a language and plain data, no fs, so scripts/build-features.mjs
 // and the tests build every page offline. The shared look (header, footer, theme) is in partials/.
 import { APP_SAME_AS } from './social.mjs';
+import { playTag, testingNote } from './testing.mjs';
 
 export const BASE = 'https://www.mohamedgado.com/projects/hadeed';
 export const PAGES = 'https://vette1123.github.io/hadeed-privacy';
@@ -28,8 +29,9 @@ export function stores(lang, ui, campaign, place, medium = 'feature_page') {
   const apple = `https://apps.apple.com/app/id${APPLE_ID}?ct=${encodeURIComponent(`${medium}-${campaign}`.slice(0, 40))}`;
   return `<nav class="badges" data-place="${place}" aria-label="${esc(ui.downloadAria)}">
           <a class="apple" href="${esc(apple)}"><img src="${IMG}app-store-en.svg" width="156" height="52" alt="${esc(ui.appleAlt)}" /></a>
-          <a class="play" href="${esc(play)}"><img src="${IMG}${ui.playImg}" width="197" height="76" alt="${esc(ui.playAlt)}" /></a>
-        </nav>`;
+          <a class="play" href="${esc(play)}"><img src="${IMG}${ui.playImg}" width="197" height="76" alt="${esc(ui.playAlt)}" />${playTag(lang)}</a>
+        </nav>
+        ${testingNote(lang)}`;
 }
 
 export const shot = (file, alt) =>

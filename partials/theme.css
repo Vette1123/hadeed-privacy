@@ -319,3 +319,11 @@ html[lang="ar"] .cta h2 { font-weight: 750; font-family: var(--arabic); letter-s
 .sf-apps b { color: var(--ink); font-weight: 600; font-size: 15px; transition: color 160ms var(--ease); }
 .sf-apps small { color: var(--soft); font-size: 13px; }
 @media (hover: hover) and (pointer: fine) { .sitefoot .sf-apps a:hover b { color: var(--gold); } }
+
+/* Google Play closed testing (scripts/testing.mjs): a tag above the badge's corner, in its clear
+   space rather than on Google's artwork, and the join line under the badges. */
+.badges .play { position: relative; }
+.badges .play .tag { position: absolute; top: -4px; inset-inline-end: 4px; padding: 1px 8px; border-radius: 999px; background: var(--gold); color: #14110a; font: 700 11px/1.6 var(--ui); letter-spacing: 0.02em; white-space: nowrap; pointer-events: none; }
+.testing { margin-top: 18px; max-width: 46ch; color: var(--soft); font-size: 14px; line-height: 1.55; }
+.testing a { color: inherit; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.cta .testing { margin-inline: auto; text-align: center; }
