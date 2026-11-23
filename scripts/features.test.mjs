@@ -35,3 +35,31 @@ test('a page with an FAQ says so in JSON-LD, with the same questions it shows', 
   for (const [q] of FEATURES.find((f) => f.slug === 'workout-planner').en.faq) assert.ok(html.includes(`<summary>${q}</summary>`));
   assert.match(html, /"applicationCategory":"HealthApplication"/);
 });
+
+// Rafiq's page depth: an offline section and four questions, in the page and in its FAQ schema.
+// The built pages on disk are checked too, so a data change that was never rebuilt fails here.
+test('every feature page carries the offline section and four FAQ answers', async () => {
+  const fs = await import('node:fs');
+  const built = buildAll();
+  for (const f of FEATURES) {
+    for (const lang of ['ar', 'en']) {
+      const file = lang === 'ar' ? `features/${f.slug}.html` : `features/en/${f.slug}.html`;
+      for (const html of [built.get(file), fs.readFileSync(new URL(`../${file}`, import.meta.url), 'utf8')]) {
+        assert.ok(html.includes(`<h2>${f[lang].offline.h}</h2>`), `${file}: offline section`);
+        assert.equal((html.match(/"@type":\s*"Question"/g) || []).length, 4, `${file}: FAQ schema`);
+      }
+    }
+  }
+});
+
+// The hero phone is each feature page's largest paint: fetched first, with its real 480x1002
+// box reserved so nothing shifts when it lands (nafis's 983/985 was copied in by mistake).
+test('the hero shot loads first and reserves its real size', () => {
+  for (const [file, html] of buildAll()) {
+    const img = html.match(/<figure class="shot">[\s\S]*?<img [^>]*>/)?.[0];
+    if (!img) continue;
+    assert.match(img, /width="480" height="1002"/, `${file}: hero size`);
+    assert.match(img, /fetchpriority="high"/, `${file}: hero priority`);
+    assert.doesNotMatch(img, /loading="lazy"/, `${file}: hero must not be lazy`);
+  }
+});

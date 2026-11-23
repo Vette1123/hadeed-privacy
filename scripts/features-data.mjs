@@ -403,3 +403,52 @@ export const UI = {
     appDesc: 'حديد تطبيق مجاني لتسجيل تمارين الجيم وتخطيطها يعمل بدون إنترنت: خطة أسبوعية، وأكثر من 5800 تمرين تراها تتحرك، ومجموعات وأرقام قياسية وسعرات.',
   },
 };
+
+// Rafiq's page shape: each feature also answers "does it work offline" in its own section, and
+// carries a fourth question. Sourced like the rest: the listing's WORKS OFFLINE paragraph, plus
+// the app itself (figures, foods and plans ship in assets/; only the coaching videos open on
+// YouTube). `h` overrides the section heading where offline is the page's own subject.
+const DEPTH = {
+  'workout-planner': {
+    en: { p: 'The plan is built on your phone, so it works with no signal. Every move in it, with its drawn figure and form steps, is inside the app. Only the session videos need a connection: they open on YouTube.', faq: ['Can I change the day my week starts?', 'Yes. Your week starts on the day you choose.'] },
+    ar: { p: 'تُبنى الخطة على هاتفك، فتعمل دون إنترنت. كل تمرين فيها، برسمه المتحرك وخطوات أدائه، موجود داخل التطبيق. فقط فيديوهات الجلسات تحتاج إلى اتصال، لأنها تُفتح على يوتيوب.', faq: ['هل أستطيع تغيير يوم بداية الأسبوع؟', 'نعم. يبدأ أسبوعك من اليوم الذي تختاره.'] },
+  },
+  'gym-workout-log': {
+    en: { p: 'Logging never waits on a connection: sets, the rest timer and your notes save on your phone the moment you tap. A Wear OS app can run the session from your watch.', faq: ['Can I log supersets?', 'Yes. Pair exercises into a superset and log them together.'] },
+    ar: { p: 'التسجيل لا ينتظر الاتصال أبدًا: المجموعات ومؤقت الراحة وملاحظاتك تُحفظ على هاتفك لحظة الضغط. ويمكن تشغيل الجلسة من ساعتك عبر تطبيق Wear OS.', faq: ['هل أستطيع تسجيل المجموعات المتعاقبة (سوبر سِت)؟', 'نعم. اجمع التمارين في مجموعة متعاقبة وسجّلها معًا.'] },
+  },
+  'exercise-library': {
+    en: { p: 'The 5,800+ exercises and their drawn figures are inside the app, so the library opens in a basement gym with no signal. Search, form steps and muscles all work offline.', faq: ['What equipment does it cover?', 'Barbell, dumbbell, machine, cable, kettlebell, band and bodyweight.'] },
+    ar: { p: 'أكثر من 5800 تمرين برسومها المتحركة موجودة داخل التطبيق، فتفتح المكتبة في جيم تحت الأرض بلا إشارة. البحث وخطوات الأداء والعضلات كلها تعمل دون إنترنت.', faq: ['ما المعدات التي تغطيها؟', 'البار والدمبل والأجهزة والكابل والكيتل بل والأحبال المطاطية ووزن الجسم.'] },
+  },
+  'progress-tracker': {
+    en: { p: 'Records, 1RM and charts are worked out on your phone from your own log, so they update the second you finish a set, signal or not. Your log is never sent to a server.', faq: ['Does it show which muscles I skip?', 'Yes. A muscle map shows what you have been training and what you have been skipping.'] },
+    ar: { p: 'الأرقام القياسية و1RM والرسوم البيانية تُحسب على هاتفك من سجلك، فتتحدث لحظة إنهاء المجموعة، بإشارة أو بدونها. سجلك لا يُرسل إلى أي خادم.', faq: ['هل يعرض العضلات التي أهملتها؟', 'نعم. خريطة العضلات تعرض ما تدربت عليه وما أهملته.'] },
+  },
+  'calorie-counter': {
+    en: { p: 'The 122 built-in foods and your own foods live on your phone, so the diary works offline and nothing you eat leaves the device.', faq: ['Do I need an account to count calories?', 'No. There is no account and no email; the diary stays on your phone.'] },
+    ar: { p: 'الأطعمة الـ122 المدمجة وأطعمتك الخاصة محفوظة على هاتفك، فتعمل يوميات الطعام دون إنترنت، ولا يغادر ما تأكله جهازك.', faq: ['هل أحتاج إلى حساب لحساب السعرات؟', 'لا. لا حساب ولا بريد إلكتروني، واليوميات تبقى على هاتفك.'] },
+  },
+  'beginner-workout-plan': {
+    en: { p: 'The plan, the moves and their figures are all inside the app and work with no signal. The session videos, in English or Arabic, open on YouTube and need a connection.', faq: ['Is the beginner plan free?', 'Yes. Hadeed is free, with no ads and nothing behind a paywall.'] },
+    ar: { p: 'الخطة والتمارين ورسومها كلها داخل التطبيق وتعمل دون إنترنت. أما فيديوهات الجلسات، بالعربية أو الإنجليزية، فتُفتح على يوتيوب وتحتاج إلى اتصال.', faq: ['هل خطة المبتدئين مجانية؟', 'نعم. حديد مجاني، بلا إعلانات ولا شيء مدفوع.'] },
+  },
+  'custom-routines': {
+    en: { p: 'Routines are built and stored on your phone, so you can plan a new split on a plane and train it in a gym with no signal.', faq: ['Can I mix my routines with the plan?', 'Yes. Your routines go on the same week as the plan.'] },
+    ar: { p: 'تُبنى الروتينات وتُحفظ على هاتفك، فتستطيع تخطيط تقسيم جديد في الطائرة والتدرب عليه في جيم بلا إشارة.', faq: ['هل أستطيع دمج روتيناتي مع الخطة؟', 'نعم. روتيناتك توضع على أسبوع الخطة نفسه.'] },
+  },
+  'offline-gym-app': {
+    en: { h: 'What still needs the internet', p: 'Very little. The session and coaching videos open on YouTube. Anonymous usage statistics and crash reports, which help fix bugs, are sent when there is a connection; they never include your workouts, weights, notes or food.', faq: ['Is Hadeed free?', 'Yes. No ads, no subscription and nothing behind a paywall.'] },
+    ar: { h: 'ما الذي يحتاج إلى إنترنت', p: 'القليل فقط. فيديوهات الجلسات والتدريب تُفتح على يوتيوب. وإحصاءات الاستخدام المجهولة وتقارير الأعطال، التي تساعد في إصلاح الأخطاء، تُرسل عند وجود اتصال، ولا تتضمن أبدًا تمارينك أو أوزانك أو ملاحظاتك أو طعامك.', faq: ['هل حديد مجاني؟', 'نعم. بلا إعلانات ولا اشتراك ولا شيء مدفوع.'] },
+  },
+};
+UI.en.offlineH = 'Does it work offline?';
+UI.ar.offlineH = 'هل يعمل دون إنترنت؟';
+for (const f of FEATURES) {
+  const d = DEPTH[f.slug];
+  if (!d) throw new Error(`features-data: no offline section for ${f.slug}`);
+  for (const lang of ['en', 'ar']) {
+    f[lang].offline = { h: d[lang].h ?? UI[lang].offlineH, p: d[lang].p };
+    f[lang].faq = [...f[lang].faq, d[lang].faq];
+  }
+}

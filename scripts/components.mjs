@@ -33,7 +33,7 @@ export function stores(lang, ui, campaign, place, medium = 'feature_page') {
 }
 
 export const shot = (file, alt) =>
-  `<figure class="shot"><picture><source type="image/avif" srcset="${IMG}${file}-480.avif 480w, ${IMG}${file}-720.avif 720w" sizes="280px" /><img src="${IMG}${file}-480.webp" srcset="${IMG}${file}-480.webp 480w, ${IMG}${file}-720.webp 720w" sizes="280px" width="480" height="985" alt="${esc(alt)}" decoding="async" /></picture></figure>`;
+  `<figure class="shot"><picture><source type="image/avif" srcset="${IMG}${file}-480.avif 480w, ${IMG}${file}-720.avif 720w" sizes="280px" /><img src="${IMG}${file}-480.webp" srcset="${IMG}${file}-480.webp 480w, ${IMG}${file}-720.webp 720w" sizes="280px" width="480" height="1002" alt="${esc(alt)}" fetchpriority="high" decoding="async" /></picture></figure>`;
 
 export const crumbs = (ui, items) =>
   `<nav class="crumbs" aria-label="${esc(ui.breadcrumb)}"><ol>${items.map(([label, href]) => (href ? `<li><a href="${href}">${esc(label)}</a></li>` : `<li aria-current="page">${esc(label)}</li>`)).join('')}</ol></nav>`;

@@ -48,6 +48,11 @@ ${c.points.map((p) => `          <li>${esc(p)}</li>`).join('\n')}
         </ul>
       </section>
 
+      <section class="sec">
+        <h2>${esc(c.offline.h)}</h2>
+        <p>${esc(c.offline.p)}</p>
+      </section>
+
 ${faqHtml(ui, c.faq)}
 
       <section class="sec">
